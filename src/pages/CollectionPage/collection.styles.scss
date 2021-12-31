@@ -1,0 +1,27 @@
+.collection-page {
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+
+  .title {
+    font-size: 38px;
+    margin: 0 auto 30px;
+  }
+}
+@media (max-width: 719px) {
+  .collection-page {
+    width: 100%;
+  }
+}
+
+@media (min-width: 720px) {
+  .collection-page {
+    width: 90%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .collection-page {
+    width: 80%;
+  }
+}
