@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/personal-clothing-shop/static/css/main.c138f11d.chunk.css",
+    "main.js": "/personal-clothing-shop/static/js/main.31df739e.chunk.js",
+    "main.js.map": "/personal-clothing-shop/static/js/main.31df739e.chunk.js.map",
+    "runtime-main.js": "/personal-clothing-shop/static/js/runtime-main.1ab0c10e.js",
+    "runtime-main.js.map": "/personal-clothing-shop/static/js/runtime-main.1ab0c10e.js.map",
+    "static/js/2.a81626d1.chunk.js": "/personal-clothing-shop/static/js/2.a81626d1.chunk.js",
+    "static/js/2.a81626d1.chunk.js.map": "/personal-clothing-shop/static/js/2.a81626d1.chunk.js.map",
+    "static/js/3.47d6a9ff.chunk.js": "/personal-clothing-shop/static/js/3.47d6a9ff.chunk.js",
+    "static/js/3.47d6a9ff.chunk.js.map": "/personal-clothing-shop/static/js/3.47d6a9ff.chunk.js.map",
+    "index.html": "/personal-clothing-shop/index.html",
+    "service-worker.js": "/personal-clothing-shop/service-worker.js",
+    "service-worker.js.map": "/personal-clothing-shop/service-worker.js.map",
+    "static/css/main.c138f11d.chunk.css.map": "/personal-clothing-shop/static/css/main.c138f11d.chunk.css.map",
+    "static/js/2.a81626d1.chunk.js.LICENSE.txt": "/personal-clothing-shop/static/js/2.a81626d1.chunk.js.LICENSE.txt",
+    "static/media/crown.207ae289.svg": "/personal-clothing-shop/static/media/crown.207ae289.svg",
+    "static/media/shopping-bag.a688874f.svg": "/personal-clothing-shop/static/media/shopping-bag.a688874f.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1ab0c10e.js",
+    "static/js/2.a81626d1.chunk.js",
+    "static/css/main.c138f11d.chunk.css",
+    "static/js/main.31df739e.chunk.js"
+  ]
+}
