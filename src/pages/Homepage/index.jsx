@@ -1,12 +1,13 @@
 import React from 'react'
 import Directory from '../../component/Directory'
-import './homepage.styles.scss'
+
+import { Wrapper } from './homepage.styled'
 
 const HomePage = (props) => {
   return (
-    <div className='homepage'>
+    <Wrapper className='homepage'>
       <Directory />
-    </div>
+    </Wrapper>
   )
 }
 

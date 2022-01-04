@@ -3,15 +3,15 @@ import { useParams } from 'react-router-dom'
 
 import CategorigedCollection from '../../component/CategorigedCollection'
 
-import './collection.styles.scss'
+import { CollectionPageContainer, Title } from './collection-page.styled'
 
 const CollectionPage = () => {
   const { collectionId } = useParams()
   return (
-    <div className='collection-page'>
-      <h1 className='title'>{collectionId.toUpperCase()}</h1>
+    <CollectionPageContainer className='collection-page'>
+      <Title>{collectionId.toUpperCase()}</Title>
       <CategorigedCollection collectionId={collectionId} />
-    </div>
+    </CollectionPageContainer>
   )
 }
 

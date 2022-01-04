@@ -2,16 +2,15 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { selectShopCollectionItems } from '../../redux/shop/shop.selector'
 import CollectionItem from '../CollectionItem'
-
-import './categoriged-collection.styles.scss'
+import { CollectionItemsContainer } from './categoriged-collection.styled'
 
 const CategorigedCollection = ({ collection }) => {
   return (
-    <div className='items'>
+    <CollectionItemsContainer>
       {collection.items.map((item) => (
         <CollectionItem key={item.id} item={item} />
       ))}
-    </div>
+    </CollectionItemsContainer>
   )
 }
 

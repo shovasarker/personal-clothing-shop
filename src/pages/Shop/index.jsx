@@ -3,17 +3,18 @@ import { Routes, Route } from 'react-router-dom'
 
 import CollectionsOverview from '../../component/CollectionsOverview'
 import CollectionPage from '../CollectionPage'
+import { Wrapper } from './shop-page.styled'
 
-import './shop-page.styles.scss'
+//import './shop-page.styles.scss'
 
 const Shop = () => {
   return (
-    <div className='shop-page'>
+    <Wrapper>
       <Routes>
         <Route path='/' element={<CollectionsOverview />} />
         <Route path=':collectionId' element={<CollectionPage />} />
       </Routes>
-    </div>
+    </Wrapper>
   )
 }
 

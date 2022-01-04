@@ -12,6 +12,7 @@ const StripeButton = ({ price }) => {
   return (
     <StripeCheckout
       className='checkout-btn'
+      style={{ marginTop: '15px', marginLeft: 'auto' }}
       label='Pay Now'
       name='Personal Clothing ltd'
       billingAddress
