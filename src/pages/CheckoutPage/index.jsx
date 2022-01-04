@@ -10,41 +10,47 @@ import {
 import CheckoutItem from '../../component/CheckoutItem'
 import StripeButton from '../../component/StripeButton'
 
-import './checkout.styles.scss'
+import {
+  CheckoutHeader,
+  CheckoutPageContainer,
+  HeaderBlock,
+  TestWarning,
+  Total,
+} from './checkout-page.styled'
 
 const CheckoutPage = ({ cartItems, totalPrice }) => {
   return (
-    <div className='checkout-page'>
-      <div className='checkout-header'>
-        <div className='header-block'>
+    <CheckoutPageContainer>
+      <CheckoutHeader>
+        <HeaderBlock>
           <span>Product</span>
-        </div>
-        <div className='header-block'>
+        </HeaderBlock>
+        <HeaderBlock>
           <span>Description</span>
-        </div>
-        <div className='header-block'>
+        </HeaderBlock>
+        <HeaderBlock>
           <span>Quantity</span>
-        </div>
-        <div className='header-block'>
+        </HeaderBlock>
+        <HeaderBlock>
           <span>Price</span>
-        </div>
-        <div className='header-block'>
+        </HeaderBlock>
+        <HeaderBlock>
           <span>Remove</span>
-        </div>
-      </div>
+        </HeaderBlock>
+      </CheckoutHeader>
       {cartItems.map((cartItem) => (
         <CheckoutItem key={cartItem.id} cartItem={cartItem} />
       ))}
-      <div className='total'>
+      <Total>
         <span>TOTAL : ${totalPrice}</span>
-      </div>
-      <div className='test-warning'>
+      </Total>
+      <TestWarning>
         *Please use the following test credit card for payments*
         <br />
         4242 4242 4242 4242 -EXP : 01/22 - CVC : 123
-      </div>
+      </TestWarning>
       <StripeButton price={totalPrice} />
-    </div>
+    </CheckoutPageContainer>
   )
 }
 

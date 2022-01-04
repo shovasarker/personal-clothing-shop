@@ -3,7 +3,6 @@ import { Routes, Route, Navigate } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { createStructuredSelector } from 'reselect'
 
-import './App.css'
 import HomePage from './pages/Homepage'
 import Shop from './pages/Shop'
 import Header from './component/Header'
@@ -14,6 +13,7 @@ import { setCurrentUser } from './redux/user/user.action'
 import { selectCurrentUser } from './redux/user/user.selector'
 
 import { auth, createUserProfileDocument } from './firebase/firebase.utils'
+import { GlobalStyle } from './global-styled'
 
 class App extends Component {
   unsubscribeFromAuth = null
@@ -45,6 +45,7 @@ class App extends Component {
   render() {
     return (
       <div>
+        <GlobalStyle />
         <Header />
         <Routes>
           <Route path='/' element={<HomePage />} />
