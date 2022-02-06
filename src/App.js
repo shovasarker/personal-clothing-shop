@@ -13,10 +13,13 @@ import { setCurrentUser } from './redux/user/user.action'
 import { selectCurrentUser } from './redux/user/user.selector'
 
 import { auth, createUserProfileDocument } from './firebase/firebase.utils'
+import { selectShopCollectionsForPreview } from './redux/shop/shop.selector'
+
 import { GlobalStyle } from './global-styled'
 
 class App extends Component {
   unsubscribeFromAuth = null
+
   componentDidMount() {
     const { setCurrentUser } = this.props
     this.unsubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
@@ -35,6 +38,11 @@ class App extends Component {
 
       // this.setState({ currentUser: user })
       // console.log(user ? user.photoURL : null)
+
+      // addCollectionAndDocuments(
+      //   'collections',
+      //   collections.map(({ title, items }) => ({ title, items }))
+      // )
     })
   }
 
@@ -69,6 +77,7 @@ class App extends Component {
 
 const mapStateToProps = createStructuredSelector({
   currentUser: selectCurrentUser,
+  collections: selectShopCollectionsForPreview,
 })
 const mapDispatchToProps = (dispatch) => ({
   setCurrentUser: (user) => dispatch(setCurrentUser(user)),
