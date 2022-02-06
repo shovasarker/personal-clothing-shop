@@ -30,11 +30,24 @@ class Shop extends Component {
     const { updateCollections } = this.props
     const collectionRef = firestore.collection('collections')
 
-    collectionRef.onSnapshot(async (snapshot) => {
+    // this.unsubscribeFromSnapshot = collectionRef.onSnapshot(
+    //   async (snapshot) => {
+    //     const collectionsMap = convertCollectionSnapshotToMap(snapshot)
+    //     updateCollections(collectionsMap)
+    //     this.setState({ loading: false })
+    //   }
+    // )
+
+    // !promise based firebase call instead of observables pattern
+    collectionRef.get().then((snapshot) => {
       const collectionsMap = convertCollectionSnapshotToMap(snapshot)
       updateCollections(collectionsMap)
       this.setState({ loading: false })
     })
+  }
+
+  componentWillUnmount() {
+    //this.unsubscribeFromSnapshot()
   }
 
   render() {

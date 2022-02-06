@@ -19,7 +19,18 @@ export const TitleLink = styled(Link)`
 `
 
 export const PreviewContainer = styled.div`
-  display: flex;
+  /* display: flex;
   gap: 15px;
-  justify-content: flex-start;
+  justify-content: flex-start; */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @media (min-width: 1280px) {
+    gap: 3rem;
+  }
 `
