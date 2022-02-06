@@ -44,6 +44,13 @@ class Shop extends Component {
       updateCollections(collectionsMap)
       this.setState({ loading: false })
     })
+
+    // !fetch call to firebase rest api
+    // fetch(
+    //   'https://firestore.googleapis.com/v1/projects/clothing-shop-db-7f750/databases/(default)/documents/collections'
+    // )
+    //   .then((response) => response.json())
+    //   .then((collections) => console.log(collections))
   }
 
   componentWillUnmount() {
