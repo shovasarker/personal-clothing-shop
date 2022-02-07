@@ -35,14 +35,6 @@ class App extends Component {
       } else {
         setCurrentUser(null)
       }
-
-      // this.setState({ currentUser: user })
-      // console.log(user ? user.photoURL : null)
-
-      // addCollectionAndDocuments(
-      //   'collections',
-      //   collections.map(({ title, items }) => ({ title, items }))
-      // )
     })
   }
 
