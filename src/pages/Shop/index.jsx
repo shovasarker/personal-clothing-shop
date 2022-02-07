@@ -7,12 +7,13 @@ import CollectionPageContainer from '../CollectionPage/container'
 
 import { Wrapper } from './shop-page.styled'
 
-import { fetchCollectionsStartAsync } from '../../redux/shop/shop.action.js'
+import { fetchCollectionsStart } from '../../redux/shop/shop.sagas'
 
 class Shop extends Component {
   componentDidMount() {
-    const { fetchCollectionsStartAsync } = this.props
-    fetchCollectionsStartAsync()
+    const { fetchCollectionsStart } = this.props
+    // fetchCollectionsStartAsync()
+    fetchCollectionsStart()
   }
 
   render() {
@@ -28,7 +29,7 @@ class Shop extends Component {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-  fetchCollectionsStartAsync: () => dispatch(fetchCollectionsStartAsync()),
+  fetchCollectionsStart: () => dispatch(fetchCollectionsStart()),
 })
 
 export default connect(null, mapDispatchToProps)(Shop)

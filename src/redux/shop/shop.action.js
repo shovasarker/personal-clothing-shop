@@ -6,7 +6,6 @@ import {
 
 export const fetchCollectionsStart = () => ({
   type: ShopActionTypes.FETCH_COLLECTIONS_START,
-  payload: true,
 })
 
 export const fetchCollectionsSuccess = (collectionsMap) => ({
