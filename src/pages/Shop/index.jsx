@@ -7,12 +7,13 @@ import CollectionPageContainer from '../CollectionPage/container'
 
 import { Wrapper } from './shop-page.styled'
 
-import { fetchCollectionsStart } from '../../redux/shop/shop.sagas'
+import { fetchCollectionsStart } from '../../redux/shop/shop.action.js'
+import { auth } from '../../firebase/firebase.utils'
 
 class Shop extends Component {
   componentDidMount() {
+    console.log('In Shop: ', auth)
     const { fetchCollectionsStart } = this.props
-    // fetchCollectionsStartAsync()
     fetchCollectionsStart()
   }
 

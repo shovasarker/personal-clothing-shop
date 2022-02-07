@@ -44,17 +44,26 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
   return userRef
 }
 
-const provider = new GoogleAuthProvider()
-provider.setCustomParameters({ prompt: 'select_account' })
+export const googleProvider = new GoogleAuthProvider()
+googleProvider.setCustomParameters({ prompt: 'select_account' })
 
 export const signInWithGoogle = async () => {
   try {
-    const { user } = await auth.signInWithPopup(provider)
+    const { user } = await auth.signInWithPopup(googleProvider)
     if (user) return true
   } catch (error) {
     console.log(error)
     return false
   }
+}
+
+export const getCurrentUser = () => {
+  return new Promise((resolve, reject) => {
+    const unsubscribe = auth.onAuthStateChanged((userAuth) => {
+      unsubscribe()
+      resolve(userAuth)
+    }, reject)
+  })
 }
 
 export const convertCollectionSnapshotToMap = (collections) => {
