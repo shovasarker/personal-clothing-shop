@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { useEffect } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import { connect } from 'react-redux'
 
@@ -8,25 +8,20 @@ import CollectionPageContainer from '../CollectionPage/container'
 import { Wrapper } from './shop-page.styled'
 
 import { fetchCollectionsStart } from '../../redux/shop/shop.action.js'
-import { auth } from '../../firebase/firebase.utils'
 
-class Shop extends Component {
-  componentDidMount() {
-    console.log('In Shop: ', auth)
-    const { fetchCollectionsStart } = this.props
+const Shop = ({ fetchCollectionsStart }) => {
+  useEffect(() => {
     fetchCollectionsStart()
-  }
+  }, [fetchCollectionsStart])
 
-  render() {
-    return (
-      <Wrapper>
-        <Routes>
-          <Route path='/' element={<CollectionsOverviewContainer />} />
-          <Route path=':collectionId' element={<CollectionPageContainer />} />
-        </Routes>
-      </Wrapper>
-    )
-  }
+  return (
+    <Wrapper>
+      <Routes>
+        <Route path='/' element={<CollectionsOverviewContainer />} />
+        <Route path=':collectionId' element={<CollectionPageContainer />} />
+      </Routes>
+    </Wrapper>
+  )
 }
 
 const mapDispatchToProps = (dispatch) => ({
