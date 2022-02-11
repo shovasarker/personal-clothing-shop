@@ -1,5 +1,5 @@
 import React from 'react'
-import { connect } from 'react-redux'
+import { useDispatch } from 'react-redux'
 
 import {
   addItem,
@@ -17,9 +17,13 @@ import {
   TextContainer,
 } from './checkout-item.styled'
 
-const CheckoutItem = ({ cartItem, removeItem, reduceQuantity, addItem }) => {
-  const leftArrowClick = () =>
-    cartItem.quantity > 1 ? reduceQuantity(cartItem) : removeItem(cartItem)
+const CheckoutItem = ({ cartItem }) => {
+  const dispatch = useDispatch()
+  const leftArrowClick = () => {
+    cartItem.quantity > 1
+      ? dispatch(reduceQuantity(cartItem))
+      : dispatch(removeItem(cartItem))
+  }
 
   return (
     <CheckoutItemContainer>
@@ -30,14 +34,14 @@ const CheckoutItem = ({ cartItem, removeItem, reduceQuantity, addItem }) => {
       <QuantityContainer>
         <ArrowContainer onClick={leftArrowClick}>&#10094;</ArrowContainer>
         <QuantityValueContainer>{cartItem.quantity}</QuantityValueContainer>
-        <ArrowContainer onClick={() => addItem(cartItem)}>
+        <ArrowContainer onClick={() => dispatch(addItem(cartItem))}>
           &#10095;
         </ArrowContainer>
       </QuantityContainer>
       <TextContainer className='price'>${cartItem.price}</TextContainer>
       <RemoveButtonContainer
         className='remove-button'
-        onClick={() => removeItem(cartItem)}
+        onClick={() => dispatch(removeItem(cartItem))}
       >
         &#10005;
       </RemoveButtonContainer>
@@ -45,10 +49,4 @@ const CheckoutItem = ({ cartItem, removeItem, reduceQuantity, addItem }) => {
   )
 }
 
-const mapDispatchToProps = (dispatch) => ({
-  addItem: (cartItem) => dispatch(addItem(cartItem)),
-  removeItem: (cartItem) => dispatch(removeItem(cartItem)),
-  reduceQuantity: (cartItem) => dispatch(reduceQuantity(cartItem)),
-})
-
-export default connect(null, mapDispatchToProps)(CheckoutItem)
+export default CheckoutItem
