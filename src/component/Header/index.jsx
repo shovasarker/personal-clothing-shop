@@ -24,6 +24,7 @@ const Header = () => {
     <HeaderContainer>
       <LogoContainer to='/'>
         <Logo className='logo' />
+        <>Sunrise Clothing</>
       </LogoContainer>
       <OptionsContainer>
         <OptionLink to='/shop'>SHOP</OptionLink>

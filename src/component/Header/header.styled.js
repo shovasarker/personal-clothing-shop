@@ -21,7 +21,17 @@ export const HeaderContainer = styled.div`
 `
 
 export const LogoContainer = styled(Link)`
-  width: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8px;
+  width: 100px;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    width: 180px;
+  }
 `
 
 export const OptionsContainer = styled.div`
@@ -30,9 +40,20 @@ export const OptionsContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  gap: 12px;
+  flex-shrink: 0;
+
+  @media (min-width: 768px) {
+    gap: 16px;
+  }
+
+  @media (min-width: 1024px) {
+    gap: 20px;
+  }
 `
 
 export const OptionLink = styled(Link)`
-  padding: 10px 15px;
+  padding: 0;
   cursor: pointer;
+  flex-shrink: 0;
 `
