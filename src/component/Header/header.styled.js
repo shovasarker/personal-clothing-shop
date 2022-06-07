@@ -26,11 +26,22 @@ export const LogoContainer = styled(Link)`
   justify-content: flex-start;
   align-items: center;
   gap: 8px;
-  width: 100px;
+  width: 60px;
+
+  span {
+    display: none;
+    text-transform: uppercase;
+    font-size: 18px;
+    letter-spacing: 0.08em;
+  }
 
   @media (min-width: 768px) {
     flex-direction: row;
-    width: 180px;
+    width: 200px;
+
+    span {
+      display: inline;
+    }
   }
 `
 
@@ -56,4 +67,5 @@ export const OptionLink = styled(Link)`
   padding: 0;
   cursor: pointer;
   flex-shrink: 0;
+  letter-spacing: 0.05em;
 `

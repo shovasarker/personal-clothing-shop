@@ -5,4 +5,9 @@ export const DirectoryMenuContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  flex-direction: column;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
 `
